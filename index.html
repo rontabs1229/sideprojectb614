@@ -7,6 +7,9 @@
 	<!-- bootsrap link -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+	<!-- Load Font Awesome CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +24,200 @@
 	<body>
 		<!-- NAVBAR SECTION -->
 			<!-- insert your codes below -->
+		<nav class="navbar navbar-expand-lg" id="navbar">
+		  <div class="container-fluid px-lg-5">
+		    <!-- Logo -->
+		    <a class="navbar-brand" href="#top" id="logo">
+		      <img src="./misc/logo/skystream_branding.png" id="logo_full" alt="SkyStream Logo">
+		    </a>
 
+		    <!-- Main Navigation Right Section -->
+		    <div class="d-flex align-items-center ms-auto" id="navlink">
+		      
+		      <!-- Primary Links (Visible on Large Displays) -->
+		      <div class="d-none d-lg-flex align-items-center me-3">
+		        <a class="nav-link mx-2" href="#">Book a Flight</a>
+		        <a class="nav-link mx-2" href="#">Manage Booking</a>
+		        <a class="nav-link mx-2" href="#">About</a>
+		        <a class="btn btn-search-pill mx-2" href="#">
+		          Destinations <i class="fa-solid fa-magnifying-glass-location ms-1"></i>
+		        </a>
+		      </div>
+
+		      <!-- Profile Avatar Icon -->
+		      <a href="#" class="user-avatar-icon me-3">
+		        <i class="fa-regular fa-circle-user"></i>
+		      </a>
+
+		      <!-- Hamburger Menu Dropdown Trigger -->
+		      <div class="dropdown">
+		        <button class="btn btn-menu-hamburger p-0" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+		          <i class="fa-solid fa-bars"></i>
+		        </button>
+
+		        <!-- Dropdown Menu Content -->
+		        <ul class="dropdown-menu dropdown-menu-end shadow mt-3" aria-labelledby="menuDropdown">
+		          <li><a class="dropdown-item" href="#">Our Destinations</a></li>
+		          <li><a class="dropdown-item" href="#">Flights</a></li>
+		          <li><a class="dropdown-item" href="#">Register</a></li>
+		          <li><a class="dropdown-item" href="#">Dashboard</a></li>
+		          
+		          <!-- Hidden on Large, Visible on Small/Medium Displays -->
+		          <li class="d-lg-none"><hr class="dropdown-divider"></li>
+		          <li class="d-lg-none"><a class="dropdown-item fw-bold" href="#">Book a Flight</a></li>
+		          <li class="d-lg-none"><a class="dropdown-item" href="#">Manage Booking</a></li>
+		          
+		          <li class="d-lg-none"><a class="dropdown-item" href="#">About</a></li>
+		          
+		          <li><hr class="dropdown-divider"></li>
+		          <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+		        </ul>
+		      </div>
+
+		    </div>
+		  </div>
+		</nav>
 
 		
 		<!-- LANDING SECTION -->
 			<!-- insert your codes below -->
+		<div class="container-fluid" id="landing">
+			<div class="row" id="heroSection">
+				<div class="col text-center" id="intro">
+					<span>REDEFINING THE SKIES</span>
+				</div>
+				<div class="col-12" id="motto">
+					<h2>Your Gateway to</h1>
+					<h1>Seamless Horizons</h1>
+				</div>
+				<div class="col-md-6" id="bannerText">
+					<p>
+						Experience unmatched comfort and reliability with Skystream Bookings. Designed for travelers who demand excellence, we offer seamless routes from the Philippines to several top destinations in Asia. Wherever you choose to fly, your extraordinary journey begins here.
+					</p>
+				</div>
+				<div id="carouselExampleInterval" class="carousel slide col-12 mx-auto" data-bs-touch="false" data-bs-ride="carousel">
+				  <div class="carousel-inner">
 
+				    <div class="carousel-item active" data-bs-interval="10000">
+				      <img src="./misc/destinations/tokyo.jpg" class="d-block w-100" alt="Tokyo, Japan">
+				      <div class="carousel-caption d-none d-md-block">
+				        <h1>Tokyo, Japan</h1>
+				        <span>via Narita International Airport</span>
+				      </div>
+				    </div>
+
+				    <div class="carousel-item" data-bs-interval="2000">
+				      <img src="./misc/destinations/seoul.jpg" class="d-block w-100" alt="Seoul, South Korea">
+				      <div class="carousel-caption d-none d-md-block">
+				        <h1>Seoul, South Korea</h1>
+				        <span>via Incheon International Airport</span>
+				      </div>
+				    </div>
+
+				    <div class="carousel-item">
+				      <img src="./misc/destinations/hanoi.jpg" class="d-block w-100" alt="Hanoi, Vietnam">
+				      <div class="carousel-caption d-none d-md-block">
+				        <h1>Hanoi, Vietnam</h1>
+				        <span>via Noi Bai International Airport</span>
+				      </div>
+				    </div>
+
+				    <div class="carousel-item">
+				      <img src="./misc/destinations/bangkok.jpg" class="d-block w-100" alt="Bangkok, Thailand">
+				      <div class="carousel-caption d-none d-md-block">
+				        <h1>Bangkok, Thailand</h1>
+				        <span>via Suvarnabhumi International Airport</span>
+				      </div>
+				    </div>
+
+				    <div class="carousel-item">
+				      <img src="./misc/destinations/taipei.jpg" class="d-block w-100" alt="Taipei, Taiwan">
+				      <div class="carousel-caption d-none d-md-block">
+				        <h1>Taipei, Taiwan</h1>
+				        <span>via Taoyuan International Airport</span>
+				      </div>
+				    </div>
+
+				    <div class="carousel-item">
+				      <img src="./misc/destinations/singapore.jpg" class="d-block w-100" alt="Singapore">
+				      <div class="carousel-caption d-none d-md-block">
+				        <h1>Singapore</h1>
+				        <span>via Changi International Airport</span>
+				      </div>
+				    </div>
+				  </div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Next</span>
+				  </button>
+				</div>
+				<div class="col-12 mx-auto" >
+					<button id="startJourneyButton">Start your Journey!</button>
+				</div>
+			</div>
+
+			<div class="directories-grid" id="landingPageDirectories">
+ 
+				<!-- First Card going to Book a flight or pwede palitan -->
+				<div class="card-directory card-image">
+					<img src="./misc/others/airline.png" class="card-bg-img" alt="Fly With Us">
+					<div class="card-overlay">
+						<h3>Fly With Us!</h3>
+						<p>Premium service in every mile.</p>
+						<a href="#" class="card-link-light">Discover More <i class="fa-solid fa-arrow-right"></i></a>
+					</div>
+				</div>
+ 
+ 				<!-- Second Directory Card image or bg?? going to Dashboard or login Page -->
+				<div class="card-directory card-white">
+					<div class="card-icon-badge">
+						<i class="fa-solid fa-ticket"></i>
+					</div>
+					<h3>Manage Booking</h3>
+					<p>Update seats, add baggage, or check flight status in real-time.</p>
+					<a href="#" class="btn-outline-directory">ACCESS PORTAL</a>
+				</div>
+ 
+				<!-- Third Card Directory  for mobile view/ maybe change position with fourth card? or remove all cards in mobile view? Going to Destinations Page -->
+				<div class="card-directory card-white">
+					<div class="card-icon-badge badge-orange">
+						<i class="fa-solid fa-route"></i>
+					</div>
+					<h3>Explore Flights</h3>
+					<p>Browse hundreds of destinations with our interactive route map.</p>
+					<a href="#" class="btn-outline-directory">OPEN ROUTE MAP</a>
+				</div>
+ 
+ 				<!-- Fourth Directory Card going to About Page  -->
+				<div class="card-directory card-dark">
+					<img src="./misc/others/cockpit.jpg" class="card-bg-img" alt="About Skystream">
+					<div class="card-overlay-dark">
+						<h3>About Skystream</h3>
+						<p>A decade of excellence in luxury aviation engineering and customer service.</p>
+						<a href="#" class="card-link-light">Learn Our Story <i class="fa-solid fa-up-right-from-square"></i></a>
+					</div>
+				</div>
+ 
+			</div>
+ 
+			<!-- Sky-High Miles Card going to Register section -->
+			<div class="row g-3" id="skyHighMiles">
+				<div class="col-12">
+					<div class="card-miles">
+						<img src="./misc/others/businessClass.jpg" class="miles-img" alt="Sky-High Miles">
+						<div class="miles-text">
+							<h3>Sky-High Miles</h3>
+							<p>Join our frequent flyer program today and earn miles on every booking toward your next dream destination.</p>
+							<a href="#" class="btn-join-now">JOIN NOW</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 			
 		<!-- LOG IN SECTION -->
@@ -76,7 +267,9 @@
 		
 		<!-- FOOTER SECTION -->
 			<!-- insert your codes below -->
-
+		<footer id="footer" class="p-3 text-center">
+			<small>© 2026 Skystream Bookings. All rights reserved.</small>
+		</footer>
 
 		
 
