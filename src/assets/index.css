@@ -55,15 +55,21 @@ html::-webkit-scrollbar-button {
 }
 
 body {
-	margin: 0; /* Ensures no default body margins cause scrollbars */
+	margin: 0;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	/* Navbar offset is handled by main.content-scroll's margin-top below —
-	   don't duplicate it here, or the scroll area gets pushed past the
-	   viewport and clipped by html/body's overflow: hidden. */
-}
 
+	background: linear-gradient(
+		-160deg,
+		#CEEAF7 0%,
+		#D5E3F0 30%,
+		#CCD7E4 60%,
+		#D7C8D8 80%,
+		#DCB8CB 100%
+	);
+	background-attachment: fixed;
+}
 /* Ensure your main content area expands to fill empty space */
 main {
 	flex: 1;
@@ -394,205 +400,245 @@ main {
 
 	/* --- Second part of landing page --- */
 	#landingBottomPart {
+			/* ==========================
+			   DIRECTORIES SECTION
+			========================== */
+
 			#landingPageDirectories {
-				max-width: 1200px;
-				margin: 3rem auto;
-				padding: 0 1rem;
+			    max-width: 1200px;
+			    margin: 3rem auto;
+			    padding: 0 1rem;
 			}
 
 			.directories-grid {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: 1rem;
-				align-items: stretch;
+			    display: grid;
+			    grid-template-columns: repeat(2, 1fr);
+			    gap: 1.25rem;
 			}
 
+			/* Stack cards on tablets & phones */
 			@media (max-width: 991.98px) {
-				#landingBottomPart .directories-grid {
-					grid-template-columns: 1fr;
-				}
+			    .directories-grid {
+			        grid-template-columns: 1fr;
+			    }
 			}
+
+			/* ==========================
+			   SHARED CARD STYLES
+			========================== */
 
 			#landingPageDirectories .card-directory {
-				border-radius: 16px;
-				overflow: hidden;
-				position: relative;
-				height: 100%;
-				width: 100%;
+			    position: relative;
+			    overflow: hidden;
+			    border-radius: 18px;
+			    width: 100%;
+			    height: 320px;              /* All cards same height */
 			}
 
-			/* --- Card 2 --- */
+			/* ==========================
+			   WHITE CARDS
+			========================== */
+
 			.card-white {
-				background-color: #FFFFFF;
-				box-shadow: 0 4px 16px rgba(30, 41, 59, 0.06);
-				padding: 2rem;
-				min-height: 200px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				text-align: left;
+			    background: #FFFFFF;
+			    box-shadow: 0 4px 18px rgba(15,23,42,.08);
+
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: center;
+
+			    padding: 2rem;
+			    height: 100%;
 			}
 
 			.card-white h3 {
-				font-family: 'Plus Jakarta Sans', sans-serif;
-				font-size: 1.3rem;
-				font-weight: 700;
-				color: #1E293B;
-				margin-bottom: 0.5rem;
+			    font-family: "Plus Jakarta Sans", sans-serif;
+			    font-size: 1.75rem;
+			    font-weight: 700;
+			    color: #1E293B;
+			    margin-bottom: .5rem;
 			}
 
 			.card-white p {
-				font-family: 'Noto Sans', sans-serif;
-				font-size: 0.9rem;
-				font-weight: 400;
-				color: #475569;
-				line-height: 145%;
-				margin-bottom: 1.2rem;
+			    font-family: "Noto Sans", sans-serif;
+			    color: #475569;
+			    line-height: 1.6;
+			    margin-bottom: 1.4rem;
 			}
 
 			.card-icon-badge {
-				width: 44px;
-				height: 44px;
-				border-radius: 12px;
-				background-color: #D3E6FE;
-				color: #1D4ED8;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 18px;
-				margin-bottom: 1rem;
+			    width: 52px;
+			    height: 52px;
+			    border-radius: 14px;
+			    background: #D3E6FE;
+			    color: #1D4ED8;
+
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+
+			    font-size: 20px;
+			    margin-bottom: 1.25rem;
 			}
 
 			.card-icon-badge.badge-orange {
-				background-color: #FDECD8;
-				color: #F59E0B;
+			    background: #FDECD8;
+			    color: #F59E0B;
 			}
 
 			.btn-outline-directory {
-				align-self: flex-start;
-				border: 1.5px solid #93C5FD;
-				color: #1D4ED8;
-				background-color: transparent;
-				border-radius: 10px;
-				padding: 0.6em 1.4em;
-				font-family: 'Plus Jakarta Sans', sans-serif;
-				font-size: 0.85rem;
-				font-weight: 600;
-				letter-spacing: 0.3px;
-				text-decoration: none;
-				transition: background-color 0.2s ease, color 0.2s ease;
+			    align-self: flex-start;
+
+			    border: 1.5px solid #93C5FD;
+			    color: #1D4ED8;
+			    background: transparent;
+
+			    border-radius: 10px;
+			    padding: .75rem 1.5rem;
+
+			    font-weight: 600;
+			    text-decoration: none;
+
+			    transition: .25s;
 			}
 
 			.btn-outline-directory:hover {
-				background-color: #60A5FA;
-				color: #F8FAFC;
-				border-color: #60A5FA;
+			    background: #60A5FA;
+			    color: white;
+			    border-color: #60A5FA;
 			}
 
-			/* --- Card 3 --- */
-			.card-image {
-				min-height: 280px;
+			/* ==========================
+			   IMAGE CARDS
+			========================== */
+
+			.card-image,
+			.card-dark {
+			    position: relative;
+			    height: 100%;
 			}
 
+			/* Background image */
 			.card-bg-img {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				z-index: 0;
+			    position: absolute;
+			    inset: 0;
+
+			    width: 100%;
+			    height: 100%;
+
+			    object-fit: cover;
+			    object-position: center;
+
+			    z-index: 0;
 			}
 
+			/* Overlay now fills ENTIRE card */
+			.card-overlay,
+			.card-overlay-dark {
+			    position: absolute;
+			    inset: 0;
+
+			    z-index: 1;
+
+			    display: flex;
+			    flex-direction: column;
+
+			    padding: 2rem;
+
+			    color: white;
+			}
+
+			/* Bottom-aligned text */
 			.card-overlay {
-				position: relative;
-				z-index: 1;
-				height: 100%;
-				min-height: 280px;
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-end;
-				padding: 1.75rem;
-				text-align: left;
-				background: linear-gradient(to top, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.05) 65%);
+			    justify-content: flex-end;
+
+			    background: linear-gradient(
+			        to top,
+			        rgba(15,23,42,.88) 0%,
+			        rgba(15,23,42,.45) 45%,
+			        rgba(15,23,42,.10) 100%
+			    );
 			}
 
-			.card-overlay h3 {
-				font-family: 'Plus Jakarta Sans', sans-serif;
-				font-size: 1.4rem;
-				font-weight: 700;
-				color: #FFFFFF;
-				margin-bottom: 0.2rem;
+			/* Centered text */
+			.card-overlay-dark {
+			    justify-content: center;
+
+			    background: linear-gradient(
+			        120deg,
+			        rgba(15,23,42,.94) 0%,
+			        rgba(15,23,42,.70) 55%,
+			        rgba(15,23,42,.35) 100%
+			    );
 			}
 
-			.card-overlay p {
-				font-family: 'Noto Sans', sans-serif;
-				font-size: 0.9rem;
-				font-weight: 300;
-				color: #F1F5F9;
-				margin-bottom: 0.8rem;
+			.card-overlay h3,
+			.card-overlay-dark h3 {
+			    font-family: "Plus Jakarta Sans", sans-serif;
+			    font-size: 2rem;
+			    font-weight: 700;
+			    margin-bottom: .5rem;
+			}
+
+			.card-overlay p,
+			.card-overlay-dark p {
+			    font-family: "Noto Sans", sans-serif;
+			    line-height: 1.6;
+			    margin-bottom: 1rem;
 			}
 
 			.card-link-light {
-				font-family: 'Plus Jakarta Sans', sans-serif;
-				font-size: 0.8rem;
-				font-weight: 700;
-				letter-spacing: 0.4px;
-				text-transform: uppercase;
-				color: #FFFFFF;
-				text-decoration: none;
-			}
-
-			.card-link-light:hover {
-				color: #F59E0B;
-			}
-
-			/* --- Card 4 --- */
-			.card-dark {
-				min-height: 200px;
-				background: linear-gradient(
-					135deg,
-					rgba(203, 213, 225, 0.7) 0%,
-					rgba(241, 245, 249, 0.4) 100%
-				);
-			}
-
-			.card-overlay-dark {
-				position: relative;
-				z-index: 1;
-				height: 100%;
-				min-height: 200px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				padding: 1.75rem;
-				text-align: left;
-				background: linear-gradient(120deg, rgba(15, 23, 42, 0.92) 40%, rgba(15, 23, 42, 0.55) 100%);
-			}
-
-			.card-overlay-dark h3 {
-				font-family: 'Plus Jakarta Sans', sans-serif;
-				font-size: 1.3rem;
-				font-weight: 700;
-				color: #F8FAFC;
-				margin-bottom: 0.5rem;
-			}
-
-			.card-overlay-dark p {
-				font-family: 'Noto Sans', sans-serif;
-				font-size: 0.85rem;
-				font-weight: 300;
-				color: #CBD5E1;
-				line-height: 145%;
-				margin-bottom: 1rem;
+			    color: #FFFFFF;
+			    text-decoration: none;
+			    font-weight: 700;
+			    text-transform: uppercase;
+			    letter-spacing: .5px;
 			}
 
 			.card-overlay-dark .card-link-light {
-				color: #60A5FA;
+			    color: #60A5FA;
 			}
 
-			.card-overlay-dark .card-link-light:hover {
-				color: #F59E0B;
+			.card-link-light:hover {
+			    color: #F59E0B;
+			}
+
+			/* ==========================
+			   RESPONSIVE
+			========================== */
+
+			@media (max-width: 991.98px) {
+
+			    .directories-grid {
+			        grid-template-columns: 1fr;
+			    }
+
+			    #landingPageDirectories .card-directory {
+			        height: 280px;
+			    }
+
+			    .card-white {
+			        padding: 1.75rem;
+			    }
+			}
+
+			@media (max-width: 576px) {
+
+			    #landingPageDirectories .card-directory {
+			        height: 250px;
+			    }
+
+			    .card-overlay,
+			    .card-overlay-dark,
+			    .card-white {
+			        padding: 1.5rem;
+			    }
+
+			    .card-overlay h3,
+			    .card-overlay-dark h3,
+			    .card-white h3 {
+			        font-size: 1.5rem;
+			    }
 			}
 
 			/* --- Sky-High Miles --- */
@@ -604,8 +650,8 @@ main {
 				background-color: #F59E0B1A;
 				backdrop-filter: blur(1px);
 				-webkit-backdrop-filter: blur(1px); /* Safari */
-				border-radius: 30px;
-				box-shadow: 0 4px 16px rgba(30, 41, 59, 0.06);
+				border-radius: 20px;
+				box-shadow: 0 4px 20px rgba(30, 41, 59, 0.06);
 				display: flex;
 				flex-direction: column;
 				padding: 1.25rem;
@@ -666,18 +712,18 @@ main {
 			}
 
 			@media (min-width: 768px) {
-				#landingBottomPart .card-miles {
+				.card-miles {
 					flex-direction: row;
 					align-items: center;
 				}
 
-				#landingBottomPart .miles-img {
+				.miles-img {
 					width: 320px;
 					height: 200px;
 					flex-shrink: 0;
 				}
 
-				#landingBottomPart .miles-text {
+				.miles-text {
 					justify-content: center;
 				}
 			}
@@ -759,21 +805,27 @@ main {
 	justify-content: center;
 	width: 36px;
 	height: 36px;
-	background-color: #45335E;
+	background-color: ;
 	border-radius: 50%;
 	text-decoration: none;
 	transition: background-color 0.2s ease;
 }
 
 .navbar .user-avatar-icon:hover {
-	background-color: #F59E0B;
-	color: #F8FAFC;
+
 }
 
 .navbar .user-avatar-icon i {
-	font-size: 22px;
-	color: #FFFFFF;
+	font-size: 25px;
+	color: #9C7EB4;
 }
+
+.navbar .user-avatar-icon i:hover {
+	font-size: 25px;
+	color: #F59E0B;
+}
+
+
 
 .navbar .btn-menu-hamburger {
 	background: transparent;
