@@ -38,20 +38,20 @@
 	      <div class="d-none d-lg-flex align-items-center me-3">
 	        <a class="nav-link mx-2" href="#">Book a Flight</a>
 	        <a class="nav-link mx-2" href="#">Manage Booking</a>
+	        <a class="nav-link mx-2" href="#">Destinations</a>
 	        <a class="nav-link mx-2" href="#">About</a>
-	        <a class="btn btn-search-pill mx-2" href="#">
-	          Destinations <i class="fa-solid fa-magnifying-glass-location ms-1"></i>
-	        </a>
+	        
 	      </div>
 
 	      <!-- Profile Avatar Icon -->
-	      <a href="#" class="user-avatar-icon me-3">
+	      <a href="#" class="nav-link user-avatar-icon me-3">
 	        <i class="fa-regular fa-circle-user"></i>
+	        <span class="d-none d-lg-block">Login/Register</span>
 	      </a>
 
 	      <!-- Hamburger Menu Dropdown Trigger -->
 	      <div class="dropdown">
-	        <button class="btn btn-menu-hamburger p-0" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+	        <button class="btn btn-menu-hamburger p-0 d-lg-none" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 	          <i class="fa-solid fa-bars"></i>
 	        </button>
 
@@ -59,11 +59,11 @@
 	        <ul class="dropdown-menu dropdown-menu-end shadow mt-3" aria-labelledby="menuDropdown">
 
 	          
-	          <li class="d-lg-none"><a class="dropdown-item fw-bold" href="#">Book a Flight</a></li>
-	          <li class="d-lg-none"><a class="dropdown-item" href="#">Manage Booking</a></li>
+	          <li><a class="dropdown-item fw-bold" href="#">Book a Flight</a></li>
+	          <li><a class="dropdown-item" href="#">Manage Booking</a></li>
 	          <li><a class="dropdown-item" href="#">Destinations</a></li>
 	          <li><a class="dropdown-item" href="#">Flights</a></li>
-	          <li class="d-lg-none"><a class="dropdown-item" href="#">About</a></li>
+	          <li><a class="dropdown-item" href="#">About</a></li>
 
 	          <li class="d-lg-none"><hr class="dropdown-divider"></li>
 	          
@@ -137,7 +137,7 @@
 							        </div>
 							      </div>
 							      <div class="fieldGroup">
-							        <label for="toInput">To</label>
+							        <label for="toInput">To:</label>
 							        <div class="inputWrap">
 							          <i>&#9992;</i>
 							          <input type="text" id="toInput" name="to" placeholder="Tokyo (NRT)" required>
@@ -146,8 +146,8 @@
 							    </div>
 							 
 							    <div id="datesSection">
-							      <div class="fieldGroup" style="margin-bottom:6px;">
-							        <label>Travel dates</label>
+							      <div class="fieldGroup">
+							        <label>Travel Dates:</label>
 							      </div>
 							      <div class="fieldRow">
 							        <div class="fieldGroup" id="departureGroup">
