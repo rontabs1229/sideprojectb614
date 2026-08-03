@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- bootsrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Load Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Google Fonts -->
+    <!-- Changed To: -->
+      <!-- Headers: Instrument Sans -->
+      <!-- Body: Chivo Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+
+  <title>SkyStream</title>
+
+  <!-- external css -->
+  <link rel="stylesheet" type="text/css" href="../assets/index.css">
+</head>
+<body>
+  <!-- NAVBAR SECTION -->
+    <!-- insert your codes below -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid px-lg-5" id="navbar">
+      <!-- Logo -->
+      <a class="navbar-brand" href="../../index.html#top" id="logo">
+        <img src="../images/logo/skystream_branding.png" id="logo_full" alt="SkyStream Logo">
+      </a>
+
+      <!-- Main Navigation Right Section -->
+      <div class="d-flex align-items-center ms-auto" id="navlink">
+        
+        <!-- Primary Links (Visible on Large Displays) -->
+        <div class="d-none d-lg-flex align-items-center me-3">
+          <a class="nav-link mx-2" href="./searchFlight.html">Book a Flight</a>
+          <a class="nav-link mx-2" href="./manage-booking.html">Manage Booking</a>
+          <a class="nav-link mx-2" href="./destinations.html">Destinations</a>
+          <a class="nav-link mx-2" href="./aboutPage.html">About</a>
+          <!-- Profile Avatar Icon -->
+        
+        </div>
+        <div class="d-lg-flex align-items-center">
+          <a class="nav-link user-avatar-icon mx-2" href="./login.html">
+            <i class="fa-regular fa-circle-user"></i>
+        </a>
+      </div>
+        
+        <!-- Hamburger Menu Dropdown Trigger -->
+        <div class="dropdown">
+          <button class="btn btn-menu-hamburger p-0 d-lg-none" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!-- Dropdown Menu Content -->
+          <ul class="dropdown-menu dropdown-menu-end shadow mt-3" aria-labelledby="menuDropdown">
+
+            
+            <li><a class="dropdown-item fw-bold" href="./searchFlight.html">Book a Flight</a></li>
+            <li><a class="dropdown-item" href="./manage-booking.html">Manage Booking</a></li>
+            <li><a class="dropdown-item" href="./destinations.html">Destinations</a></li>
+            <li><a class="dropdown-item" href="./aboutPage.html">About</a></li>
+
+            <li class="d-lg-none"><hr class="dropdown-divider"></li>
+            
+            
+            
+            
+            <li><a class="dropdown-item" href="./register.html">Register</a></li>
+            <li><a class="dropdown-item" href="./dashboard.html">Dashboard</a></li>
+            
+            
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="../../index.html#landing">Logout</a></li>
+            
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <main class="content-scroll">
+    <div class="dashboard-wrap">
+
+      <!-- TOP ROW: Active booking + Member/Progress -->
+      <div class="row g-3">
+        <div class="col-lg-8">
+          <div class="booking-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <span class="eyebrow">Active Bookings</span>
+              <span class="booking-ref">Booking Ref <span class="ref-code">SK-29401</span></span>
+            </div>
+
+            <h2 class="route-title">London, Heathrow<br>New York, JFK</h2>
+
+            <div class="flight-leg">
+              <div>
+                <div class="leg-code">JFK</div>
+                <div class="leg-time">08:30</div>
+                <div class="leg-place">New York, USA</div>
+              </div>
+              <div class="leg-path">
+                <div class="leg-nonstop">Non-stop</div>
+                <div class="leg-dashline"><span class="plane-icon">&#9992;</span></div>
+                <div class="leg-duration">7h 15m</div>
+              </div>
+              <div class="text-end">
+                <div class="leg-code">LHR</div>
+                <div class="leg-time">20:45</div>
+                <div class="leg-place">London, UK</div>
+              </div>
+            </div>
+
+            <div class="flight-leg mb-4">
+              <div>
+                <div class="leg-code">LHR</div>
+                <div class="leg-time">13:20</div>
+                <div class="leg-place">London, UK</div>
+              </div>
+              <div class="leg-path">
+                <div class="leg-nonstop">Non-stop</div>
+                <div class="leg-dashline"><span class="plane-icon">&#9992;</span></div>
+                <div class="leg-duration">7h 15m</div>
+              </div>
+              <div class="text-end">
+                <div class="leg-code">JFK</div>
+                <div class="leg-time">15:35</div>
+                <div class="leg-place">New York, USA</div>
+              </div>
+            </div>
+
+            <button class="btn btn-manage">Manage Booking</button>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="member-card">
+            <div class="member-icon">&#9737;</div>
+            <div>
+              <div class="member-label">Gold Member</div>
+              <div class="member-title">SkyHigh Elite</div>
+            </div>
+          </div>
+
+          <div class="progress-card">
+            <h3>Tier Progress</h3>
+            <p class="progress-sub">You're getting closer to Platinum status!</p>
+
+            <div class="progress-row">
+              <span>9,800 miles to go</span>
+              <span class="pct">82%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-gold" style="width: 82%"></div>
+            </div>
+            <p class="progress-note">Maintain Gold status by Dec 31, 2026.</p>
+
+            <div class="insights-block">
+              <div class="insights-title">&#128161; Smart Insights</div>
+              <div class="insights-box">
+                Bookings to Paris are 15% lower than usual for next month. Use your miles to save an additional $200!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <h3 class="section-title">Quick Actions</h3>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <a href="#" class="quick-action-card">
+            <div class="quick-action-icon">&#9992;</div>
+            <div class="quick-action-label">Book a Flight</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a href="#" class="quick-action-card">
+            <div class="quick-action-icon">&#128100;</div>
+            <div class="quick-action-label">Check-in</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a href="#" class="quick-action-card">
+            <div class="quick-action-icon">&#128269;</div>
+            <div class="quick-action-label">Flight Status</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a href="#" class="quick-action-card">
+            <div class="quick-action-icon">&#8593;</div>
+            <div class="quick-action-label">Upgrade</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- RECENT ACTIVITY -->
+      <div class="d-flex justify-content-between align-items-center">
+        <h3 class="section-title mb-0">Recent Activity</h3>
+        <a href="#" class="view-all-link">View All</a>
+      </div>
+      <div class="activity-card mt-3">
+        <div class="activity-row">
+          <div class="activity-left">
+            <div class="activity-icon blue">&#9992;</div>
+            <div>
+              <div class="activity-title">Flight to Tokyo (HND)</div>
+              <div class="activity-sub">May 12, 2024 &middot; Completed</div>
+            </div>
+          </div>
+          <div class="activity-right">
+            <div class="activity-amount green">+6,400 Miles</div>
+            <div class="activity-note">Points Earned</div>
+          </div>
+        </div>
+
+        <div class="activity-row">
+          <div class="activity-left">
+            <div class="activity-icon gold">&#128722;</div>
+            <div>
+              <div class="activity-title">In-flight Purchase</div>
+              <div class="activity-sub">May 12, 2024 &middot; Duty Free</div>
+            </div>
+          </div>
+          <div class="activity-right">
+            <div class="activity-amount red">&minus;$120.00</div>
+            <div class="activity-note">VISA ...4291</div>
+          </div>
+        </div>
+
+        <div class="activity-row">
+          <div class="activity-left">
+            <div class="activity-icon navy">&#127903;</div>
+            <div>
+              <div class="activity-title">Lounge Access Granted</div>
+              <div class="activity-sub">May 11, 2024 &middot; JFK Terminal 4</div>
+            </div>
+          </div>
+          <div class="activity-right">
+            <div class="activity-amount plain">Complimentary</div>
+            <div class="activity-note">Elite Benefit</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CURATED FOR YOU -->
+      <div class="d-flex justify-content-between align-items-center">
+        <h3 class="section-title mb-0">Curated For You</h3>
+        <div class="d-flex gap-2">
+          <button class="curated-nav-btn">&#8249;</button>
+          <button class="curated-nav-btn">&#8250;</button>
+        </div>
+      </div>
+
+      <div class="row g-3 mt-1">
+        <div class="col-md-4">
+          <div class="curated-card" style="background-image: url('https://source.unsplash.com/600x500/?santorini,greece');">
+            <span class="curated-badge">Best Value</span>
+            <div class="curated-info">
+              <div class="curated-place">Santorini, Greece</div>
+              <div class="curated-price">Fly for 28,000 Miles</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="curated-card" style="background-image: url('https://source.unsplash.com/600x500/?tokyo,night');">
+            <span class="curated-badge">Trending</span>
+            <div class="curated-info">
+              <div class="curated-place">Tokyo, Japan</div>
+              <div class="curated-price">Fly for 45,000 Miles</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="curated-card" style="background-image: url('https://source.unsplash.com/600x500/?zermatt,mountains');">
+            <span class="curated-badge">Winter Escape</span>
+            <div class="curated-info">
+              <div class="curated-place">Zermatt, Switzerland</div>
+              <div class="curated-price">Fly for 32,000 Miles</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  
+
+  <!-- FOOTER SECTION -->
+    <!-- insert your codes below -->
+  
+  <footer id="footer">
+    <div class="footer-inner">
+   
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../images/logo/skystream_branding.png">
+        </div>
+        <p class="footer-tagline">
+          Experience unmatched comfort and reliability with Skystream Bookings.
+          Wherever you choose to fly, your extraordinary journey begins here.
+        </p>
+      </div>
+   
+      <div class="footer-columns">
+   
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="./searchFlight.html">Search Flights</a></li>
+            <li><a href="./manage-booking.html">Manage Booking</a></li>
+            <li><span class="static">Car Rental</span></li>
+          </ul>
+        </div>
+   
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><span class="static">Top Trending</span></li>
+            <li class="sub">&gt; <a href="./destinations.html">Tokyo</a></li>
+            <li class="sub">&gt; <a href="./destinations.html">Hanoi</a></li>
+            <li class="sub">&gt; <a href="./destinations.html">Bangkok</a></li>
+          </ul>
+        </div>
+   
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="./aboutPage.html">SkyStream Profile</a></li>
+            <li><a href="./aboutPage.html">Developers</a></li>
+            <li><a href="./aboutPage.html">Contact Us</a></li>
+          </ul>
+        </div>
+   
+      </div>
+    </div>
+   
+    <div class="footer-bottom">
+      <small>© 2026 SkyStream Bookings. All rights reserved.</small>
+    </div>
+  </footer>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
