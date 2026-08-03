@@ -11,9 +11,12 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 	<!-- Google Fonts -->
+		<!-- Changed To: -->
+			<!-- Headers: Instrument Sans -->
+			<!-- Body: Chivo Mono -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
 
 	<title>SkyStream</title>
@@ -36,15 +39,15 @@
 	      
 	      <!-- Primary Links (Visible on Large Displays) -->
 	      <div class="d-none d-lg-flex align-items-center me-3">
-	        <a class="nav-link mx-2" href="#">Book a Flight</a>
-	        <a class="nav-link mx-2" href="#">Manage Booking</a>
-	        <a class="nav-link mx-2" href="#">Destinations</a>
-	        <a class="nav-link mx-2" href="#">About</a>
+	        <a class="nav-link mx-2" href="./src/pages/searchFlight.html">Book a Flight</a>
+	        <a class="nav-link mx-2" href="./src/pages/manage-booking.html">Manage Booking</a>
+	        <a class="nav-link mx-2" href="./src/pages/destinations.html">Destinations</a>
+	        <a class="nav-link mx-2" href="./src/pages/aboutPage.html">About</a>
 	        <!-- Profile Avatar Icon -->
 		    
 	      </div>
 	      <div class="d-lg-flex align-items-center">
-	      	<a class="nav-link user-avatar-icon mx-2" href="#">
+	      	<a class="nav-link user-avatar-icon mx-2" href="./src/pages/login.html">
 		        <i class="fa-regular fa-circle-user"></i>
 		    </a>
 		  </div>
@@ -59,19 +62,18 @@
 	        <ul class="dropdown-menu dropdown-menu-end shadow mt-3" aria-labelledby="menuDropdown">
 
 	          
-	          <li><a class="dropdown-item fw-bold" href="#">Book a Flight</a></li>
-	          <li><a class="dropdown-item" href="#">Manage Booking</a></li>
-	          <li><a class="dropdown-item" href="#">Destinations</a></li>
-	          <li><a class="dropdown-item" href="#">Flights</a></li>
-	          <li><a class="dropdown-item" href="#">About</a></li>
+	          <li><a class="dropdown-item fw-bold" href="./src/pages/searchFlight.html">Book a Flight</a></li>
+	          <li><a class="dropdown-item" href="./src/pages/manage-booking.html">Manage Booking</a></li>
+	          <li><a class="dropdown-item" href="./src/pages/destinations.html">Destinations</a></li>
+	          <li><a class="dropdown-item" href="./src/pages/aboutPage.html">About</a></li>
 
 	          <li class="d-lg-none"><hr class="dropdown-divider"></li>
 	          
 	          
 	          
 	          
-	          <li><a class="dropdown-item" href="#">Register</a></li>
-	          <li><a class="dropdown-item" href="#">Dashboard</a></li>
+	          <li><a class="dropdown-item" href="./src/pages/register.html">Register</a></li>
+	          <li><a class="dropdown-item" href="./src/pages/dashboard.html">Dashboard</a></li>
 	          
 	          
 	          <li><hr class="dropdown-divider"></li>
@@ -215,7 +217,7 @@
 						<img src="./src/images/placeholders/cockpit.jpg" class="card-bg-img" alt="About Skystream">
 						<div class="card-overlay-dark">
 							<h3>About Skystream</h3>
-							<p>A decade of excellence in luxury aviation engineering and customer service.</p>
+							<p>Designed for travelers who demand excellence, from the Philippines to several top destinations in Asia.</p>
 							<a href="#" class="card-link-light">Learn Our Story <i class="fa-solid fa-up-right-from-square"></i></a>
 						</div>
 					</div>
@@ -242,8 +244,56 @@
 
 	<!-- FOOTER SECTION -->
 		<!-- insert your codes below -->
-	<footer id="footer" class="p-3 text-center">
-		<small>© 2026 Skystream Bookings. All rights reserved.</small>
+	
+	<footer id="footer">
+	  <div class="footer-inner">
+	 
+	    <div class="footer-brand">
+	      <div class="footer-logo">
+	        <img src="./src/images/logo/skystream_branding.png">
+	      </div>
+	      <p class="footer-tagline">
+	        Experience unmatched comfort and reliability with Skystream Bookings.
+	        Wherever you choose to fly, your extraordinary journey begins here.
+	      </p>
+	    </div>
+	 
+	    <div class="footer-columns">
+	 
+	      <div class="footer-col">
+	        <h4>Product</h4>
+	        <ul>
+	          <li><a href="./src/pages/searchFlight.html">Search Flights</a></li>
+	          <li><a href="./src/pages/manage-booking.html">Manage Booking</a></li>
+	          <li><span class="static">Car Rental</span></li>
+	        </ul>
+	      </div>
+	 
+	      <div class="footer-col">
+	        <h4>Destinations</h4>
+	        <ul>
+	          <li><span class="static">Top Trending</span></li>
+	          <li class="sub">&gt; <a href="./src/pages/destinations.html">Tokyo</a></li>
+	          <li class="sub">&gt; <a href="./src/pages/destinations.html">Hanoi</a></li>
+	          <li class="sub">&gt; <a href="./src/pages/destinations.html">Bangkok</a></li>
+	        </ul>
+	      </div>
+	 
+	      <div class="footer-col">
+	        <h4>About Us</h4>
+	        <ul>
+	          <li><a href="./src/pages/about.html">SkyStream Profile</a></li>
+	          <li><a href="./src/pages/about.html">Developers</a></li>
+	          <li><a href="./src/pages/about.html">Contact Us</a></li>
+	        </ul>
+	      </div>
+	 
+	    </div>
+	  </div>
+	 
+	  <div class="footer-bottom">
+	    <small>© 2026 SkyStream Bookings. All rights reserved.</small>
+	  </div>
 	</footer>
 
 	

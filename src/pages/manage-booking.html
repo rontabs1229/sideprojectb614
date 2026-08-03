@@ -1,156 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkyStream | Manage Booking</title>
-  <!-- Google Fonts & Icons -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- bootsrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Load Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Google Fonts -->
+    <!-- Changed To: -->
+      <!-- Headers: Instrument Sans -->
+      <!-- Body: Chivo Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Custom Theme -->
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+
+  <title>SkyStream</title>
+
+  <!-- external css -->
+  <link rel="stylesheet" type="text/css" href="../assets/index.css">
 </head>
 <body>
-
-  <!-- SkyStream Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-skystream py-3">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <i class="bi bi-airplane-engines-fill text-warning fs-4"></i>
-        <span>SKYSTREAM</span>
+  <!-- NAVBAR SECTION -->
+    <!-- insert your codes below -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid px-lg-5" id="navbar">
+      <!-- Logo -->
+      <a class="navbar-brand" href="../../index.html#top" id="logo">
+        <img src="../images/logo/skystream_branding.png" id="logo_full" alt="SkyStream Logo">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#skyNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="skyNav">
-        <ul class="navbar-nav ms-auto gap-3">
-          <li class="nav-item"><a class="nav-link" href="home.html">Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="search-flight.html">Book Flight</a></li>
-          <li class="nav-item"><a class="nav-link active" href="manage-booking.html">Manage Booking</a></li>
-        </ul>
+
+      <!-- Main Navigation Right Section -->
+      <div class="d-flex align-items-center ms-auto" id="navlink">
+        
+        <!-- Primary Links (Visible on Large Displays) -->
+        <div class="d-none d-lg-flex align-items-center me-3">
+          <a class="nav-link mx-2" href="./searchFlight.html">Book a Flight</a>
+          <a class="nav-link mx-2" href="./manage-booking.html">Manage Booking</a>
+          <a class="nav-link mx-2" href="./destinations.html">Destinations</a>
+          <a class="nav-link mx-2" href="./aboutPage.html">About</a>
+          <!-- Profile Avatar Icon -->
+        
+        </div>
+        <div class="d-lg-flex align-items-center">
+          <a class="nav-link user-avatar-icon mx-2" href="./login.html">
+            <i class="fa-regular fa-circle-user"></i>
+        </a>
+      </div>
+        
+        <!-- Hamburger Menu Dropdown Trigger -->
+        <div class="dropdown">
+          <button class="btn btn-menu-hamburger p-0 d-lg-none" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!-- Dropdown Menu Content -->
+          <ul class="dropdown-menu dropdown-menu-end shadow mt-3" aria-labelledby="menuDropdown">
+
+            
+            <li><a class="dropdown-item fw-bold" href="./searchFlight.html">Book a Flight</a></li>
+            <li><a class="dropdown-item" href="./manage-booking.html">Manage Booking</a></li>
+            <li><a class="dropdown-item" href="./destinations.html">Destinations</a></li>
+            <li><a class="dropdown-item" href="./aboutPage.html">About</a></li>
+
+            <li class="d-lg-none"><hr class="dropdown-divider"></li>
+            
+            
+            
+            
+            <li><a class="dropdown-item" href="./register.html">Register</a></li>
+            <li><a class="dropdown-item" href="./dashboard.html">Dashboard</a></li>
+            
+            
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="../../index.html#landing">Logout</a></li>
+            
+            
+          </ul>
+        </div>
+
       </div>
     </div>
   </nav>
 
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <span class="badge bg-warning text-dark px-3 py-2 mb-2 text-uppercase fw-bold">Passenger Portal</span>
-      <h1 class="fw-bold text-dark">Manage Your Booking</h1>
-      <p class="text-muted">Retrieve details or cancel your existing reservation.</p>
-    </div>
+  <main class="content-scroll">
+    <!-- INSERT CODES BELOW -->
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <span class="badge bg-warning text-dark px-3 py-2 mb-2 text-uppercase fw-bold">Passenger Portal</span>
+        <h1 class="fw-bold text-dark">Manage Your Booking</h1>
+        <p class="text-muted">Retrieve details or cancel your existing reservation.</p>
+      </div>
 
-    <!-- Search Form -->
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-8 col-lg-6">
-        <div class="skystream-card p-4">
-          <h5 class="fw-bold mb-3"><i class="bi bi-search me-2 text-primary"></i>Find Flight Reservation</h5>
-          <form>
-            <div class="mb-3">
-              <label class="form-label small fw-semibold">Booking Number</label>
-              <input type="text" class="form-control text-uppercase font-monospace" value="BK-98765" placeholder="e.g. BK-98765" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label small fw-semibold">Passenger Last Name or Email</label>
-              <input type="text" class="form-control" value="Bautista" placeholder="e.g. Bautista or erin@example.com" required>
-            </div>
-            <button type="submit" class="btn btn-skystream w-100 py-2">Retrieve Flight</button>
-          </form>
+      <!-- Search Form -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-8 col-lg-6">
+          <div class="skystream-card p-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-search me-2 text-primary"></i>Find Flight Reservation</h5>
+            <form>
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">Booking Number</label>
+                <input type="text" class="form-control text-uppercase font-monospace" value="BK-98765" placeholder="e.g. BK-98765" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">Passenger Last Name or Email</label>
+                <input type="text" class="form-control" value="Bautista" placeholder="e.g. Bautista or erin@example.com" required>
+              </div>
+              <button type="submit" class="btn btn-skystream w-100 py-2">Retrieve Flight</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Active Itinerary Details -->
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <h4 class="fw-bold mb-3">Your Booking Details</h4>
-        <div class="skystream-card p-4">
-          <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 border-bottom mb-3 gap-2">
-            <div>
-              <span class="badge bg-success mb-1">Confirmed</span>
-              <h5 class="fw-bold mb-1">MNL <i class="bi bi-arrow-right text-muted mx-2"></i> CEB</h5>
-              <div class="mt-2">
-                <span class="text-muted small">Booking Ref: </span>
-                <span class="reference-badge small fw-bold">BK-98765</span>
+      <!-- Active Itinerary Details -->
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h4 class="fw-bold mb-3">Your Booking Details</h4>
+          <div class="skystream-card p-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 border-bottom mb-3 gap-2">
+              <div>
+                <span class="badge bg-success mb-1">Confirmed</span>
+                <h5 class="fw-bold mb-1">MNL <i class="bi bi-arrow-right text-muted mx-2"></i> CEB</h5>
+                <div class="mt-2">
+                  <span class="text-muted small">Booking Ref: </span>
+                  <span class="reference-badge small fw-bold">BK-98765</span>
+                </div>
+              </div>
+              <div>
+                <span class="badge bg-light text-dark border p-2"><i class="bi bi-calendar-event me-1"></i> Booked: Aug 15, 2026</span>
               </div>
             </div>
-            <div>
-              <span class="badge bg-light text-dark border p-2"><i class="bi bi-calendar-event me-1"></i> Booked: Aug 15, 2026</span>
-            </div>
-          </div>
 
-          <div class="row g-3">
-            <div class="col-6 col-md-3">
-              <span class="d-block text-muted small">Flight Number</span>
-              <strong class="text-dark font-monospace">FL-101</strong>
+            <div class="row g-3">
+              <div class="col-6 col-md-3">
+                <span class="d-block text-muted small">Flight Number</span>
+                <strong class="text-dark font-monospace">FL-101</strong>
+              </div>
+              <div class="col-6 col-md-3">
+                <span class="d-block text-muted small">Flight Status</span>
+                <span class="badge bg-success">Scheduled</span>
+              </div>
+              <div class="col-6 col-md-3">
+                <span class="d-block text-muted small">Passenger Name</span>
+                <strong class="text-dark">Erin Bautista</strong>
+              </div>
+              <div class="col-6 col-md-3">
+                <span class="d-block text-muted small">Available Seats</span>
+                <strong class="text-dark">42 Remaining</strong>
+              </div>
+              <div class="col-6 col-md-3">
+                <span class="d-block text-muted small">Origin</span>
+                <strong class="text-dark fs-6">MNL</strong>
+              </div>
+              <div class="col-6 col-md-3">
+                <span class="d-block text-muted small">Destination</span>
+                <strong class="text-dark fs-6">CEB</strong>
+              </div>
+              <div class="col-6 col-md-3">
+                <span class="d-block text-muted small">Departure Time</span>
+                <strong class="text-dark">Aug 15, 2026, 08:00 AM</strong>
+              </div>
+              <div class="col-6 col-md-3">
+                <span class="d-block text-muted small">Arrival Time</span>
+                <strong class="text-dark">Aug 15, 2026, 09:30 AM</strong>
+              </div>
             </div>
-            <div class="col-6 col-md-3">
-              <span class="d-block text-muted small">Flight Status</span>
-              <span class="badge bg-success">Scheduled</span>
-            </div>
-            <div class="col-6 col-md-3">
-              <span class="d-block text-muted small">Passenger Name</span>
-              <strong class="text-dark">Erin Bautista</strong>
-            </div>
-            <div class="col-6 col-md-3">
-              <span class="d-block text-muted small">Available Seats</span>
-              <strong class="text-dark">42 Remaining</strong>
-            </div>
-            <div class="col-6 col-md-3">
-              <span class="d-block text-muted small">Origin</span>
-              <strong class="text-dark fs-6">MNL</strong>
-            </div>
-            <div class="col-6 col-md-3">
-              <span class="d-block text-muted small">Destination</span>
-              <strong class="text-dark fs-6">CEB</strong>
-            </div>
-            <div class="col-6 col-md-3">
-              <span class="d-block text-muted small">Departure Time</span>
-              <strong class="text-dark">Aug 15, 2026, 08:00 AM</strong>
-            </div>
-            <div class="col-6 col-md-3">
-              <span class="d-block text-muted small">Arrival Time</span>
-              <strong class="text-dark">Aug 15, 2026, 09:30 AM</strong>
-            </div>
-          </div>
 
-          <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top justify-content-between align-items-center">
-            <button class="btn btn-outline-secondary btn-sm" onclick="window.print()"><i class="bi bi-printer me-1"></i> Print Boarding Pass</button>
-            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#cancelModal"><i class="bi bi-x-circle me-1"></i> Cancel Booking</button>
+            <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top justify-content-between align-items-center">
+              <button class="btn btn-outline-secondary btn-sm" onclick="window.print()"><i class="bi bi-printer me-1"></i> Print Boarding Pass</button>
+              <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#cancelModal"><i class="bi bi-x-circle me-1"></i> Cancel Booking</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Cancel Modal -->
-  <div class="modal fade" id="cancelModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-danger fw-bold"><i class="bi bi-exclamation-triangle me-2"></i>Cancel Booking</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p class="mb-1">Are you sure you want to cancel booking <strong class="font-monospace">BK-98765</strong>?</p>
-          <p class="text-muted small">This action will change your booking status to <span class="badge bg-danger">Booking Cancelled by Customer</span>.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep Booking</button>
-          <button type="button" class="btn btn-danger">Confirm Cancellation</button>
+    <!-- Cancel Modal -->
+    <div class="modal fade" id="cancelModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-danger fw-bold"><i class="bi bi-exclamation-triangle me-2"></i>Cancel Booking</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-1">Are you sure you want to cancel booking <strong class="font-monospace">BK-98765</strong>?</p>
+            <p class="text-muted small">This action will change your booking status to <span class="badge bg-danger">Booking Cancelled by Customer</span>.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep Booking</button>
+            <button type="button" class="btn btn-danger">Confirm Cancellation</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
+  
 
-  <footer class="skystream-footer text-center mt-5">
-    <div class="container">
+  <!-- FOOTER SECTION -->
+    <!-- insert your codes below -->
+  
+  <footer id="footer">
+    <div class="footer-inner">
+   
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../images/logo/skystream_branding.png">
+        </div>
+        <p class="footer-tagline">
+          Experience unmatched comfort and reliability with Skystream Bookings.
+          Wherever you choose to fly, your extraordinary journey begins here.
+        </p>
+      </div>
+   
+      <div class="footer-columns">
+   
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="./searchFlight.html">Search Flights</a></li>
+            <li><a href="./manage-booking.html">Manage Booking</a></li>
+            <li><span class="static">Car Rental</span></li>
+          </ul>
+        </div>
+   
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><span class="static">Top Trending</span></li>
+            <li class="sub">&gt; <a href="./destinations.html">Tokyo</a></li>
+            <li class="sub">&gt; <a href="./destinations.html">Hanoi</a></li>
+            <li class="sub">&gt; <a href="./destinations.html">Bangkok</a></li>
+          </ul>
+        </div>
+   
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="./aboutPage.html">SkyStream Profile</a></li>
+            <li><a href="./aboutPage.html">Developers</a></li>
+            <li><a href="./aboutPage.html">Contact Us</a></li>
+          </ul>
+        </div>
+   
+      </div>
+    </div>
+   
+    <div class="footer-bottom">
       <small>© 2026 SkyStream Bookings. All rights reserved.</small>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

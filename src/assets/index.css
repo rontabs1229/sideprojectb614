@@ -7,10 +7,9 @@
 html, body {
 	margin: 0;
 	height: 100%;
-	overflow-x: hidden; /* safety net - nothing should ever be able to
-	                       push horizontal scroll onto the page */
-	scrollbar-width: thin; /* Firefox */
-	scrollbar-color: rgba(100, 116, 139, 0.4) transparent; /* Firefox: transparent gray thumb, no track */
+	overflow-x: hidden;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(100, 116, 139, 0.4) transparent;
 }
 
 /* WebKit browsers (Chrome, Edge, Safari) */
@@ -23,7 +22,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-	background: rgba(100, 116, 139, 0.4); /* transparent gray */
+	background: rgba(100, 116, 139, 0.4);
 	border-radius: 999px;
 	border: none;
 }
@@ -32,24 +31,21 @@ html::-webkit-scrollbar-thumb:hover {
 	background: rgba(100, 116, 139, 0.6);
 }
 
-/* Remove the up/down arrow buttons at each end of the scrollbar track,
-   leaving just the draggable thumb indicator */
+
 html::-webkit-scrollbar-button {
 	display: none;
 	width: 0;
 	height: 0;
 }
 
-/* Hide the scrollbar visually on medium and small screens (matches the
-   same lg breakpoint used elsewhere, e.g. .directories-grid).
-   Scrolling itself still works - only the visible scrollbar is removed. */
+
 @media (max-width: 991.98px) {
 	html {
-		scrollbar-width: none; /* Firefox */
+		scrollbar-width: none;
 	}
 
 	html::-webkit-scrollbar {
-		display: none; /* Chrome, Edge, Safari */
+		display: none;
 		width: 0;
 	}
 }
@@ -61,7 +57,7 @@ body {
 	flex-direction: column;
 
 	background: linear-gradient(
-		120deg,
+		125deg,
 		#CEEAF7 0%,
 		#D5E3F0 30%,
 		#CCD7E4 60%,
@@ -70,15 +66,13 @@ body {
 	);
 	background-attachment: fixed;
 }
-/* Ensure your main content area expands to fill empty space */
+
 main {
 	flex: 1;
 }
 
 
-/* ==========================================================================
-   Landing
-   ========================================================================== */
+/* Landing */
 
 @keyframes trackSlide {
 	0%     { transform: translateX(0%); }
@@ -96,10 +90,7 @@ main {
 	100%   { transform: translateX(-600%); }
 }
 
-/* Remove Bootstrap's default .container-fluid side padding on the landing
-   wrapper - otherwise the absolutely-positioned 100vw hero track gets
-   clipped at the padded edge instead of the true viewport edge, leaving
-   visible gaps on both sides of the banner. */
+
 .landing.container-fluid {
 	padding-left: 0;
 	padding-right: 0;
@@ -110,19 +101,12 @@ main {
 	/* --- First part of landing page --- */
 		#heroSection {
 			min-height: calc(100vh - 60px);
-			width: 100%; /* parent (.container-fluid) already has zero padding,
-			                so this is already flush with the viewport - no vw
-			                tricks needed, which avoids the %-vs-vw scrollbar
-			                mismatch that a 50vw-based full-bleed hack can leave
-			                behind as a few pixels of gap on each side. */
+			width: 100%; 
 			position: relative;
 			z-index: 10;
 			color: #fff;
 			text-align: center;
-			padding-top: 60px auto; /* moved content up (was 200px) */
-			/* Cancels Bootstrap's .row default -15px/-15px side margins, which
-			   would otherwise make this wider than the viewport now that the
-			   parent .container-fluid padding has been zeroed out above. */
+			padding-top: 60px auto;
 			margin-left: 0;
 			margin-right: 0;
 			margin-bottom: 0;
@@ -133,24 +117,25 @@ main {
 			justify-content: center;
 			align-items: center;
 
-			font-family: 'Noto Sans', sans-serif;
-			font-size: 11px;
+			font-family: 'Instrument Sans';
+			font-size: 12px;
 			font-weight: 700;
-			letter-spacing: 1.2px;
+			line-height: 130%;
+			letter-spacing: 1.5px;
 			text-transform: uppercase;
 			max-width: 15rem;
 
 			padding: 1.2em;   
 			margin: 1.5em auto;            
 
-			background-color: #9C7EB499;  
-			color: #DCB8CB;
+			background-color: #F7AF3399;  
+			color: #CEEAF7;
 			backdrop-filter: blur(2px);             
 			border-radius: 50px;       
 			border: none;
 		}
 
-		/* Scope the shadow to text content, not the whole section (keeps button clean) */
+
 		#heroContent {
 			position: relative;
 			z-index: 1;
@@ -161,15 +146,6 @@ main {
 			text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 		}
 
-		/* Pure clipping box - deliberately holds NO animation or transform of
-		   its own, so it isn't part of the same compositing layer that some
-		   Chromium/WebKit builds mishandle when overflow:hidden, an animated
-		   transform, and a backdrop-filter element all share one clip context.
-		   contain:paint is the CSS Containment spec's explicit guarantee that
-		   nothing inside this box - regardless of transforms or GPU layers -
-		   can ever paint outside its border box; it's a stronger guarantee
-		   than overflow:hidden/clip-path alone and is the correct tool for
-		   exactly this kind of compositing leak. */
 		.heroSection-track {
 			position: absolute;
 			top: 0;
@@ -181,15 +157,9 @@ main {
 			clip-path: inset(0);
 			isolation: isolate;
 			contain: paint;
-			/* Bootstrap auto-applies gutter padding (default 12px each side) to
-			   every direct child of a .row via its ".row > *" rule - #heroSection
-			   is a .row, so this element was silently getting 24px total of
-			   inner padding, shrinking its content box and leaving a matching
-			   sliver on each edge where content behind it showed through. */
 			padding: 0;
 		}
 
-		/* The actual sliding element, nested one level inside the clipper */
 		.heroSection-slides {
 			display: flex;
 			height: 100%;
@@ -200,7 +170,7 @@ main {
 		}
 
 		.heroSection-slide {
-			flex: 0 0 100%; /* each slide is exactly one track-width wide */
+			flex: 0 0 100%;
 			height: 100%;
 			background-size: cover;
 			background-position: center;
@@ -217,50 +187,51 @@ main {
 			display: block;
 			justify-content: center;
 			align-items: flex-start;
-			font-family: 'Plus Jakarta Sans', sans-serif;
+			font-family: 'Instrument Sans';
 			font-size: 48px;
 			font-weight: 700;
 			color: #F7AF33;
 		}
 
+
+
 		#motto h1 {
 			display: block;
 			justify-content: center;
 			align-items: flex-start;
-			font-family: 'Plus Jakarta Sans', sans-serif;
+			font-family: 'Instrument Sans';
 			font-size: 60px;
 			font-weight: 700;
 			color: #CEEAF7;
 		}
 
-		#bannerText {
+		/*#bannerText {
 			display: block;
 			justify-content: center;
 			align-items: center;
 			text-align: center;
 			margin: 0 auto;
-			font-family: 'Noto Sans', sans-serif;
+			font-family: 'Chivo Mono';
 			font-size: 1.2rem;
 			font-weight: 300;
 			line-height: 150%;
 			color: #1E293B;
-		}
+		}*/
 
 		.flightSearchForm {
-			margin: 0 auto; /* centers the form horizontally */
+			margin: 0 auto;
 			background: rgba(255, 255, 255, 0.2);
 			backdrop-filter: blur(1px);
-			-webkit-backdrop-filter: blur(1px); /* Safari */
+			-webkit-backdrop-filter: blur(1px);
 			border: 1px solid rgba(255, 255, 255, 0.4);
 			border-radius: 16px;
 			padding: 24px;
 			width: 100%;
 			max-width: 480px;
 			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+			justify-content: center;
 		}
 
-		/* Trip type radio inputs live at the top of the form (visually hidden)
-		   so later siblings can react to :checked via the ~ combinator */
 		.tripTypeInput {
 			position: absolute;
 			opacity: 0;
@@ -341,7 +312,7 @@ main {
 			border-radius: 10px;
 			font-size: 14px;
 			color: #222;
-			font-family: inherit;
+			font-family: 'Chivo Mono';
 		}
 
 		.inputWrap input:focus {
@@ -376,36 +347,29 @@ main {
 		}
 
 		.searchBtn {
-			width: 100%;
-			background: #9C7EB4;
-			color: #F8FAFC;
-			border: none;
-			padding: 13px 2px;
-
-			border-radius: 50px;       
-			border: none;
-			font-size: 15px;
-			font-weight: 600;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 8px;
-			transition: background 0.2s;
+		    background: #9C7EB4;
+		    color: #F8FAFC;
+		    border: none;
+		    padding: 13px 70px;
+		    border-radius: 50px;
+		    font-size: 15px;
+		    font-weight: 600;
+		    cursor: pointer;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    gap: 8px;
+		    margin: 0 auto;      /* centers the button horizontally */
+		    transition: background 0.2s;
 		}
-
 		.searchBtn:hover {
-			background: #F7AF33;
+		    background: #F7AF33;
 		}
 	}
 	
 
 	/* --- Second part of landing page --- */
 	#landingBottomPart {
-			/* ==========================
-			   DIRECTORIES SECTION
-			========================== */
-
 			#landingPageDirectories {
 			    max-width: 1200px;
 			    margin: 3rem auto;
@@ -425,21 +389,16 @@ main {
 			    }
 			}
 
-			/* ==========================
-			   SHARED CARD STYLES
-			========================== */
+			
 
 			#landingPageDirectories .card-directory {
 			    position: relative;
 			    overflow: hidden;
 			    border-radius: 18px;
 			    width: 100%;
-			    height: 320px;              /* All cards same height */
+			    height: 320px;            
 			}
 
-			/* ==========================
-			   WHITE CARDS
-			========================== */
 
 			.card-white {
 			    background: #FFFFFF;
@@ -454,7 +413,7 @@ main {
 			}
 
 			.card-white h3 {
-			    font-family: "Plus Jakarta Sans", sans-serif;
+			    font-family: "Instrument Sans";
 			    font-size: 1.75rem;
 			    font-weight: 700;
 			    color: #1E293B;
@@ -462,7 +421,7 @@ main {
 			}
 
 			.card-white p {
-			    font-family: "Noto Sans", sans-serif;
+			    font-family: "Chivo Mono";
 			    color: #475569;
 			    line-height: 1.6;
 			    margin-bottom: 1.4rem;
@@ -510,9 +469,7 @@ main {
 			    border-color: #F7AF33;
 			}
 
-			/* ==========================
-			   IMAGE CARDS
-			========================== */
+		
 
 			.card-image,
 			.card-dark {
@@ -534,7 +491,7 @@ main {
 			    z-index: 0;
 			}
 
-			/* Overlay now fills ENTIRE card */
+	
 			.card-overlay,
 			.card-overlay-dark {
 			    position: absolute;
@@ -550,10 +507,9 @@ main {
 			    color: white;
 			}
 
-			/* Bottom-aligned text */
+	
 			.card-overlay {
 			    justify-content: flex-end;
-
 			    background: linear-gradient(
 			        to top,
 			        rgba(15,23,42,.88) 0%,
@@ -562,10 +518,9 @@ main {
 			    );
 			}
 
-			/* Centered text */
+
 			.card-overlay-dark {
 			    justify-content: center;
-
 			    background: linear-gradient(
 			        120deg,
 			        rgba(15,23,42,.94) 0%,
@@ -576,7 +531,7 @@ main {
 
 			.card-overlay h3,
 			.card-overlay-dark h3 {
-			    font-family: "Plus Jakarta Sans", sans-serif;
+			    font-family: "Instrument Sans";
 			    font-size: 2rem;
 			    font-weight: 700;
 			    margin-bottom: .5rem;
@@ -584,7 +539,7 @@ main {
 
 			.card-overlay p,
 			.card-overlay-dark p {
-			    font-family: "Noto Sans", sans-serif;
+			    font-family: "Chivo Mono";
 			    line-height: 1.6;
 			    margin-bottom: 1rem;
 			}
@@ -605,9 +560,6 @@ main {
 			    color: #F7AF33;
 			}
 
-			/* ==========================
-			   RESPONSIVE
-			========================== */
 
 			@media (max-width: 991.98px) {
 
@@ -676,7 +628,7 @@ main {
 			}
 
 			.miles-text h3 {
-				font-family: 'Plus Jakarta Sans', sans-serif;
+				font-family: 'Instrument Sans';
 				font-size: 1.3rem;
 				font-weight: 700;
 				color: #1E293B;
@@ -684,8 +636,8 @@ main {
 			}
 
 			.miles-text p {
-				font-family: 'Noto Sans', sans-serif;
-				font-size: 0.9rem;
+				font-family: 'Chivo Mono';
+				font-size: 14px;
 				font-weight: 400;
 				color: #475569;
 				line-height: 145%;
@@ -700,7 +652,7 @@ main {
 				border: none;
 				border-radius: 50px;
 				padding: 0.7em 1.8em;
-				font-family: 'Plus Jakarta Sans', sans-serif;
+				font-family: 'Instrument Sans';
 				font-size: 0.85rem;
 				font-weight: 600;
 				letter-spacing: 0.3px;
@@ -790,10 +742,11 @@ main {
 }
 
 #navlink .nav-link {
-	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-family: 'Instrument Sans';
 	font-size: 16px;
 	line-height: 130%;
 	font-weight: bold;
+	word-spacing: 5px;
 	color: #828A95;
 	text-decoration: none;
 }
@@ -854,40 +807,122 @@ main {
 }
 
 .dropdown-menu .dropdown-item {
-	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-family: 'Instrument Sans';
 	font-weight: 600;
 	font-size: 15px;
+	word-spacing: 3px;
 	padding: 8px 20px;
 }
 
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-
+/* footer */
 footer {
 	background: #CEEAF7B3;
 	backdrop-filter: blur(5px);
-	width: 100%; /* Prevents horizontal overflow caused by 100vw + padding */
-	flex-shrink: 0; /* Keep footer at its natural height inside the flex column */
-	font-family: 'Noto Sans', sans-serif;
+	width: 100%;
+	flex-shrink: 0;
+	font-family: 'Instrument Sans';
 	font-weight: 500;
 	font-style: normal;
 	font-size: 16px;
 	color: #1E293B;
-	padding: 20px 0;
-	text-align: center;
-	margin-top: auto; /* Pushes the footer to the bottom of the flex box */
+	padding: 40px 60px 20px;
+	margin-top: auto;
+	position: relative;
+	overflow: hidden;
+  }
+ 
+
+
+.footer-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 40px;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+/* Brand column */
+.footer-brand {
+	max-width: 260px;
+}
+
+.footer-logo img {
+	height: 60px;
 }
 
 
-/* ==========================================================================
-   Main content scroll area
-   ========================================================================== */
+
+.footer-tagline {
+	margin-top: 12px;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #334155;
+}
+
+/* Link columns */
+.footer-columns {
+	display: flex;
+	gap: 70px;
+	flex-wrap: wrap;
+}
+
+.footer-col h4 {
+	margin: 0 0 14px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	color: #1E293B;
+	text-transform: uppercase;
+}
+
+.footer-col ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.footer-col li {
+	margin-bottom: 10px;
+}
+
+.footer-col li.sub {
+	padding-left: 14px;
+}
+
+.footer-col a {
+	font-size: 13px;
+	font-weight: 400;
+	color: #334155;
+	text-decoration: none;
+}
+
+.footer-col a:hover {
+	text-decoration: underline;
+}
+
+.footer-col span.static {
+	font-size: 13px;
+	font-weight: 400;
+	color: #334155;
+}
+
+/* Bottom copyright */
+.footer-bottom {
+	text-align: center;
+	margin-top: 36px;
+	padding-top: 16px;
+	font-size: 12px;
+	font-weight: 400;
+	color: #64748B;
+}
+
+
+/* Content Scroll */
 
 main.content-scroll {
-	/* Whole page now scrolls together (see html, body and ::-webkit-scrollbar
-	   rules below) - main no longer needs its own overflow/height tricks,
-	   just the navbar clearance offset. */
-	margin-top: 50px; /* Offset for fixed navbar */
+	margin-top: 50px;
 }
